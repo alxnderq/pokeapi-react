@@ -6,7 +6,6 @@ import PokemonTitle from "../pokemon-title/pokemon-title";
 
 import { PokemonList } from "~/interfaces/pokemon";
 
-import Link from "next/link";
 import "./pokemon.view.scss";
 
 const PokemonView = (): JSX.Element => {
@@ -32,12 +31,7 @@ const PokemonView = (): JSX.Element => {
         <div className="pokemon-list-container">
           <div className="pokemon-list">
             {data?.results.map((item) => (
-              <Link href={{
-                pathname: '/pokemon/[name]',
-                query: { name: item.name }
-              }}>
-                <PokemonCardItem key={item.name} pokemonResult={item} />
-              </Link>
+              <PokemonCardItem key={item.name} pokemonResult={item} />
             ))}
           </div>
         </div>
